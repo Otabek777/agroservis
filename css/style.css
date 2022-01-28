@@ -131,22 +131,85 @@ ul, ol {
   -ms-flex-align: center;
   align-items: center; }
   .header__navbar .li {
-    margin-left: 64px; }
+    margin-left: 64px;
+    position: relative; }
+  .header__navbar .li_sub {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 29px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .header__navbar .li_sub a {
+      display: block;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 140%;
+      -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: #091013;
+      -webkit-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      padding: 12px 24px; }
+    .header__navbar .li_sub a:nth-child(1) {
+      padding-top: 24px;
+      border-top: 4px solid #F50000; }
+    .header__navbar .li_sub a:last-child {
+      padding-bottom: 24px; }
+    .header__navbar .li_sub a:hover {
+      color: #F50000; }
+  .header__navbar .li:hover .li_sub {
+    -webkit-transition: all 0.9s ease;
+    -o-transition: all 0.9s ease;
+    transition: all 0.9s ease;
+    max-height: 1000px; }
   .header__navbar .li:nth-child(1) {
     margin-left: 0; }
   .header__navbar .item {
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    padding-bottom: 8px;
+    border-bottom: 4px solid transparent;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+  .header__navbar .item:hover {
+    border-color: #F50000; }
 
 .header__btn {
   width: 248px; }
 
+main {
+  overflow: hidden; }
+
+@-webkit-keyframes btnDown {
+  from {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); }
+  to {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px); } }
+
+@keyframes btnDown {
+  from {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); }
+  to {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px); } }
+
 .banner {
   position: relative;
   height: 900px;
-  background: url(../img/banner.png) no-repeat center/cover; }
+  background: url(../img/banner.png) no-repeat center/cover;
+  background-attachment: fixed; }
 
 .banner::after {
   content: "";
@@ -209,7 +272,16 @@ ul, ol {
   .banner__down svg {
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
+    transition: all 0.5s ease;
+    -webkit-animation-name: btnDown;
+    animation-name: btnDown;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse; }
 
 .banner__down:hover svg {
   -webkit-transform: translateY(10px);
@@ -219,7 +291,8 @@ ul, ol {
 .benefits {
   height: 1070px;
   position: relative;
-  background: url(../img/benefits-bg.png) no-repeat center/cover; }
+  background: url(../img/benefits-bg.png) no-repeat center/cover;
+  background-attachment: fixed; }
 
 .benefits::after {
   content: "";
@@ -243,6 +316,53 @@ ul, ol {
     line-height: 125%;
     color: #FFFFFF;
     margin-bottom: 56px; }
+
+.benefits__wrap {
+  width: 300px;
+  padding-top: 5px; }
+  .benefits__wrap .num {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 12px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+    border-left: 5px solid #F50000;
+    padding-top: 1px;
+    padding-left: 6px; }
+  .benefits__wrap h5 {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    min-height: 43px;
+    max-height: 43px;
+    overflow: hidden; }
+  .benefits__wrap .img {
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+    position: relative; }
+    .benefits__wrap .img img {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+
+.benefits__block:nth-child(2n) .benefits__wrap .img {
+  height: 220px; }
 
 .news {
   padding: 160px 0; }

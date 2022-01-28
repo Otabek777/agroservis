@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
     <title></title>
@@ -23,6 +25,10 @@
                     </li>
                     <li class="li">
                         <a class="item" href="#">Муниципальные объекты</a>
+                        <div class="li_sub">
+                            <a href="#">Строящиеся объекты</a>
+                            <a href="#">Сданные объекты</a>
+                        </div>
                     </li>
                     <li class="li">
                         <a class="item" href="#">Жилой комплекс</a>
@@ -41,17 +47,82 @@
         <section class="banner">
             <div class="banner__content">
                 <h1 class="banner__h1">Жилой комплекс «Сергиев Пассаж»</h1>
-                <a href="#" class="banner__down">
+                <a href="#banner__down" class="banner__down">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="71" viewBox="0 0 16 71" fill="none">
                         <path d="M7.29289 70.7071C7.68341 71.0976 8.31658 71.0976 8.7071 70.7071L15.0711 64.3431C15.4616 63.9526 15.4616 63.3195 15.0711 62.9289C14.6805 62.5384 14.0474 62.5384 13.6569 62.9289L8 68.5858L2.34314 62.9289C1.95262 62.5384 1.31945 62.5384 0.928929 62.9289C0.538405 63.3195 0.538405 63.9526 0.928929 64.3431L7.29289 70.7071ZM7 -4.37114e-08L7 70L9 70L9 4.37114e-08L7 -4.37114e-08Z" fill="white"/>
                     </svg>
                 </a>
             </div>
         </section>
-        <section class="benefits">
+        <section class="benefits" id="banner__down">
             <div class="benefits__content">
                 <div class="container">
                     <h2 class="h2">Ключевые преимущества</h2>
+                    <div class="benefits__slider">
+                        <div class="benefits__block">
+                            <div class="benefits__wrap">
+                                <p class="num">01</p>
+                                <h5>Многолетний опыт</h5>
+                                <div class="img">
+                                    <img src="img/1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefits__block">
+                            <div class="benefits__wrap">
+                                <p class="num">02</p>
+                                <h5>Гибкая ценовая политика</h5>
+                                <div class="img">
+                                    <img src="img/1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefits__block">
+                            <div class="benefits__wrap">
+                                <p class="num">03</p>
+                                <h5>Широкая география строительства</h5>
+                                <div class="img">
+                                    <img src="img/1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefits__block">
+                            <div class="benefits__wrap">
+                                <p class="num">04</p>
+                                <h5>Система видеонаблюдения за строительством</h5>
+                                <div class="img">
+                                    <img src="img/1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefits__block">
+                            <div class="benefits__wrap">
+                                <p class="num">05</p>
+                                <h5>Непрерывность производства</h5>
+                                <div class="img">
+                                    <img src="img/1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefits__block">
+                            <div class="benefits__wrap">
+                                <p class="num">06</p>
+                                <h5>Техническая база</h5>
+                                <div class="img">
+                                    <img src="img/1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefits__block">
+                            <div class="benefits__wrap">
+                                <p class="num">07</p>
+                                <h5>Максимально короткие сроки</h5>
+                                <div class="img">
+                                    <img src="img/1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -182,6 +253,21 @@
         </div>
     </footer>
 
+    <script src="js/jquery.min.js"></script>
+    <script src="slick-1.8.1/slick/slick.min.js"></script>
+    <script src="js/SmoothScroll.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $('.benefits__slider').slick({
+            infinite: false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            dots: false,
+            arrows: false,
+            speed: 900,
+            autoplay: true,
+            autoplaySpeed: 5000,
+        });
+    </script>
 </body>
 </html>
