@@ -1,5 +1,5 @@
 $(window).scroll(function(){
-    if ( $(this).scrollTop() > 100) {
+    if ( $(this).scrollTop() > 30) {
         $('.header').addClass('fixed');
     } else {
         $('.header').removeClass('fixed');
@@ -27,4 +27,13 @@ $(function(){
         $('html, body').animate({scrollTop: $(target).offset().top}, 800);
         return false;
     }); 
+});
+
+
+document.querySelector('.header__burgir').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('body').classList.toggle('hidden');
+    document.querySelector('.header__navbar').classList.toggle('active');
+    document.querySelector('.header__logo').classList.toggle('active');
+    document.querySelector('.header__btn').classList.toggle('active');
 });
